@@ -1,0 +1,93 @@
+== Factory Method
+
+* Aynı interface'i veya abstract sınıfı implement etmiş factory nesnelerinin üretiminden sorumlu pattern dir.
+
+[source,cpp]
+----
+class DataBase {
+public:
+    virtual void Save() = 0;
+};
+
+class MsSQL: public DataBase { // <1>
+public:
+    void Save() {
+        std::cout << "MsSql Saved \n";
+    }
+};
+
+class MySQL: public DataBase  {
+public:
+    void Save() {
+        std::cout << "MySql Saved \n";
+    }
+};
+
+class Oracle: public DataBase  {
+public:
+    void Save() {
+        std::cout << "Oracle Saved \n";
+    }
+};
+
+
+class DatabaseFactory { // <2>
+public:
+    virtual DataBase* SaveDatabase(DataBase *) = 0;
+
+};
+
+class Factory: public DatabaseFactory{ // <3>
+public:
+    template <typename T>
+    DataBase *SaveDatabase(T* database) {
+        database->Save();
+    }
+};
+----
+<1> Abstract Implementasyonu
+<2> Factory Abstract Class
+<3> Access of all class
+
+
+.Factory
+[uml,file="factory.png"]
+--
+
+left to right direction
+
+abstract class DataBase {
+    + Save()
+}
+
+class MsSQL {
+  + void Save()
+}
+
+class MySQL {
+  + void Save()
+}
+
+class Oracle {
+  + void Save()
+}
+
+abstract class DatabaseFactory {
+    + SaveDatabase()
+}
+
+class Factory <Database> {
+  + void Save()
+}
+
+
+DataBase <|-- MsSQL
+DataBase <|-- MySQL
+DataBase <|-- Oracle
+DataBase <|.. Factory
+
+DatabaseFactory <|-- Factory
+
+--
+
+image:factory.png[Factory,role="right"]

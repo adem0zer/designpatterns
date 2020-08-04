@@ -1,0 +1,31 @@
+[
+{
+  "directory": "C:/Users/adem/Desktop/Builder/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2019\\ENTERP~1\\VC\\Tools\\MSVC\\1425~1.286\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP  -I..\\header  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG   -std:c++latest /FoCMakeFiles\\compile.dir\\main.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\adem\\Desktop\\Builder\\main.cpp",
+  "file": "C:/Users/adem/Desktop/Builder/main.cpp"
+},
+
+{
+  "directory": "C:/Users/adem/Desktop/Builder/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2019\\ENTERP~1\\VC\\Tools\\MSVC\\1425~1.286\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP  -I..\\header  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG   -std:c++latest /FoCMakeFiles\\compile.dir\\src\\Computer.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\adem\\Desktop\\Builder\\src\\Computer.cpp",
+  "file": "C:/Users/adem/Desktop/Builder/src/Computer.cpp"
+},
+
+{
+  "directory": "C:/Users/adem/Desktop/Builder/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2019\\ENTERP~1\\VC\\Tools\\MSVC\\1425~1.286\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP  -I..\\header  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG   -std:c++latest /FoCMakeFiles\\compile.dir\\src\\Monster.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\adem\\Desktop\\Builder\\src\\Monster.cpp",
+  "file": "C:/Users/adem/Desktop/Builder/src/Monster.cpp"
+},
+
+{
+  "directory": "C:/Users/adem/Desktop/Builder/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2019\\ENTERP~1\\VC\\Tools\\MSVC\\1425~1.286\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP  -I..\\header  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG   -std:c++latest /FoCMakeFiles\\compile.dir\\src\\MonsterAbraA5_V15_4.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\adem\\Desktop\\Builder\\src\\MonsterAbraA5_V15_4.cpp",
+  "file": "C:/Users/adem/Desktop/Builder/src/MonsterAbraA5_V15_4.cpp"
+},
+
+{
+  "directory": "C:/Users/adem/Desktop/Builder/build",
+  "command": "C:\\PROGRA~2\\MICROS~1\\2019\\ENTERP~1\\VC\\Tools\\MSVC\\1425~1.286\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP  -I..\\header  /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O2 /Ob2 /DNDEBUG   -std:c++latest /FoCMakeFiles\\compile.dir\\src\\MonsterAbraA7_V11_1.cpp.obj /FdTARGET_COMPILE_PDB /FS -c C:\\Users\\adem\\Desktop\\Builder\\src\\MonsterAbraA7_V11_1.cpp",
+  "file": "C:/Users/adem/Desktop/Builder/src/MonsterAbraA7_V11_1.cpp"
+}
+]

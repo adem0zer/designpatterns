@@ -1,0 +1,52 @@
+== Observer Pattern
+
+* Elimizdeki mevcut nesnenin durumunda herhangi bir değişiklik olduğunda, bu değişiklerden diğer nesneleri haberdar eden bir tasarım kalıbıdır.
+
+
+.Builder Pattern Example
+[uml,file="builder_design.png"]
+--
+
+left to right direction
+
+
+abstract class Observer {
+    + {abstract} void Update()
+}
+
+class MüdürObserver {
+
+}
+
+class BashekimObserver {
+
+}
+
+class Personel {
+    + int Id
+    + string Adi 
+    + string SoyAdi 
+    + bool personelAyrildiMi
+    + Personel()
+    + bool PersonelAyrildiMi()
+    - List<Observer> Gozlemciler
+    + void AboneEkle()
+    + void AboneCikar()
+    + void Notify()
+    
+}
+
+
+Observer <|-- MüdürObserver
+Observer <|-- BashekimObserver
+Personel --> Observer
+
+note "Notify(){ \n\tfor g in Gözlemciler\n\tg.Update()}" as N1
+
+Personel .. N1
+
+
+
+
+
+--

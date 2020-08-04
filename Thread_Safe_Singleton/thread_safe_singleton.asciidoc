@@ -1,0 +1,68 @@
+== Thread-Safe Singleton
+
+* Singleton sınıfının constructor’ı private olmalıdır. Böylece o sınınftan yeni instance oluşturmak engellenmiş olur.
+
+* Singleton sınıfın instance’ı içeride private static olarak tutulmalıdır.
+
+* Tutulan instance’ı döndüren bir public static metoda sahip olmalıdır.
+
+* Thread-safe olması için lock koymak gerekiyor.
+
+[source,cpp]
+----
+class CustomerManager{
+private:
+    static CustomerManager* _customerManager; // <1>
+
+    CustomerManager() { } // <2>
+
+public:
+    static CustomerManager* getCustomerManager() { // <3>
+
+        if(_customerManager == NULL) {
+            mutex_kilitleme.lock(); // <4>
+            if(_customerManager == NULL) {
+                _customerManager = new CustomerManager();
+            }
+            mutex_kilitleme.unlock();
+        }
+
+        return _customerManager;
+    }
+
+    void addCustomer(){
+        cout << "Musteri kayit edildi\n";
+    }
+    void deleteCustomer(){
+        cout << "Musteri veri tabanindan silindi\n";
+    }
+
+};
+----
+<1> Private static instance
+<2> Private constructor
+<3> Public method
+<4> Thread safe lock 
+
+
+.Singleton Thread Safe 
+[uml,file="singleton_thread_safe.png"]
+--
+left to right direction
+
+
+
+class CustomerManager << (S,#FF7700) Singleton >> {
+  - {static} CustomerManager _customerManager
+  - CustomerManager()
+  + {static} CustomerManager getCustomerManager()
+  + void addCustomer()
+  + void deleteCustomer()
+}
+
+CustomerManager --> CustomerManager
+
+--
+
+image:singleton_thread_safe.png[Singleton,role="right"]
+

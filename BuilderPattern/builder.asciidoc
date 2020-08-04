@@ -1,0 +1,103 @@
+== Builder Pattern
+
+* Karmaşık yapıdaki nesnelerin oluşturulmasında, istemcinin sadece nesne tipini belirterek üretimi gerçekleştirebilmesini sağlamak için kullanılmaktadır.
+
+
+.Builder Pattern Example
+[uml,file="builder_design.png"]
+--
+
+left to right direction
+
+abstract ComputerParts {
+
+    + void setMainBoard(const string &MainBoard)
+
+    + void setRam(const string &Ram)
+
+    + void setProcessor(const string &Processor)
+
+    + void setGPU(const string &GPU)
+
+    + void setMemory(const string &Memory)
+
+    + void setDisplayScreen(const string &DisplayScreen)
+
+    + void setKeyboard(const string &Keyboard)
+   
+}
+
+class Computer{
+    - string MainBoard
+    - string Ram
+    - string Processor
+    - string GPU
+    - string Memory
+    - string DisplayScreen
+    - string Keyboard
+
+    
+    + void setMainBoard(const string &mainBoard)
+
+    + void setRam(const string &ram)
+
+    + void setProcessor(const string &processor)
+
+    + void setGPU(const string &gpu)
+
+    + void setMemory(const string &memory)
+
+    + void setDisplayScreen(const string &displayScreen)
+
+    + void setKeyboard(const string &keyboard) 
+}
+
+abstract ComputerBuilder{
+
+    + void buildMainBoard()
+
+    + void buildRam()
+
+    + void buildProcessor()
+
+    + void buildGPU()
+
+    + void buildMemory()
+
+    + void buildDisplayScreen()
+
+    + void buildKeyboard()
+
+    + Computer* getComputer()
+}
+
+class MonsterAbraA5_V15_4{
+    
+}
+
+class MonsterAbraA7_V11_1{
+
+}
+
+
+class Monster{
+    - ComputerBuilder* computerBuilder
+    + Monster(ComputerBuilder *computerBuilder)
+    + Computer* getComputer()
+    + void createComputer()
+}
+
+Monster o-- ComputerBuilder
+
+ComputerBuilder <|-- MonsterAbraA5_V15_4
+ComputerBuilder <|-- MonsterAbraA7_V11_1
+
+ComputerParts <|-- Computer
+
+
+MonsterAbraA5_V15_4 --> Computer
+MonsterAbraA7_V11_1 --> Computer
+
+--
+
+image:builder_design.png[Builder,role="right"]

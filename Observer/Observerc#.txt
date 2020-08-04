@@ -1,0 +1,125 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ObserverDeseni
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Personel p = new Personel();
+            p.AboneEkle(new MüdürObserver());
+            p.AboneEkle(new BasHekimObserver());
+
+            Personel p2 = new Personel();
+            p2.AboneEkle(new MüdürObserver());
+            p2.AboneEkle(new BasHekimObserver());
+
+            p.Id = 1;
+            p.Adi = "Veli";
+            p.SoyAdi = "Yıldız";
+
+            
+
+          
+            p2.Id = 2;
+            p2.Adi = "Ahmet";
+            p2.SoyAdi = "Çakmak";
+
+            Thread t1 = new Thread(() =>
+            {
+                p.PersonelAyrildiMi = true;
+            });
+
+            Thread t2 = new Thread(() =>
+            {
+                p2.PersonelAyrildiMi = true;
+            });
+
+            t1.Start();
+            t2.Start();
+
+
+
+            Console.ReadKey();
+
+        }
+    }
+
+    abstract public class Observer
+    {
+        public abstract void Update();
+    }
+
+    public class MüdürObserver : Observer
+    {
+        public override void Update()
+        {
+            Console.WriteLine("Personel sayısı eksildi.");
+        }
+    }
+
+    public class BasHekimObserver : Observer
+    {
+        public override void Update()
+        {
+            Console.WriteLine("Personel sayısı eksildi.");
+        }
+    }
+
+    public class Personel
+    {
+        public int Id { get; set; }
+        public string Adi { get; set; }
+        public string SoyAdi { get; set; }
+
+        public Personel()
+        {
+            this.Gozlemciler = new List<Observer>();
+        }
+
+        bool personelAyrildiMi;
+        //Bu property Observer D. P.'de değeri kontrol edilen özelliğimizdir.
+        //set bloğuna dikkat edersek eğer set edilen değer true ise
+        //Notify metodu tetiklenmekte ve tüm abonelere haber gönderilmektedir.
+        public bool PersonelAyrildiMi
+        {
+            get { return personelAyrildiMi; }
+            set
+            {
+                if (value = true)
+                {
+                    Notify();
+                    personelAyrildiMi = value;
+                }
+                else
+                    personelAyrildiMi = value;
+            }
+        }
+        //Subject nesnesi kendisine abone olan gözlemcileri bu koleksiyonda tutacaktır.
+        List<Observer> Gozlemciler;
+        
+        //Gözlemci ekle
+        public void AboneEkle(Observer observer)
+        {
+            Gozlemciler.Add(observer);
+        }
+        //Gözlemci çıkar
+        public void AboneCikar(Observer observer)
+        {
+            Gozlemciler.Remove(observer);
+        }
+        //Herhangi bir güncelleme olursa ilgili gözlemcilere haber verecek metodumuzdur.
+        public void Notify()
+        {
+            Gozlemciler.ForEach(g =>
+            {
+                g.Update();
+            });
+        }
+    }
+}

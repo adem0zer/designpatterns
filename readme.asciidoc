@@ -1,0 +1,149 @@
+* 2 farklı seviye başlık  için kendi örnek metninizi ekleyiniz.
+
+== Tasarım Kalıpları Nedir?
+
+Aslında aşağıdaki soruların cevaplarını ararken girdiğimiz yol, bizi tasarım prensipleri ve kalıplarına çıkarır.
+
+=== Tarihçe
+
+Eric Gamma, Richard Helm, Ralph Johnson ve John Vlissides 1995’te “Design Patterns : Elements of Reusable Object – Oriented Software” kitabını çıkardılar. Bu dörtlü ayrıca “Gang of Four” olarak da bilinir.
+
+* Numarali ve numarasiz maddeler icin linux ile ilgili örnek metinler ekleyiniz.
+
+
+En sık kullanılan kalıplar
+
+* Creational.
+* Structural.
+* Behavioral.
+
+
+
+Creational Kalıplar
+
+. Factory Method
+. Singleton
+. Abstract Factory
+. Builder
+
+
+* Admonition ile 3 farklı uyarı ekleyiniz.
+
+
+WARNING: Wolpertingers are known to nest in server racks.
+
+TIP: Admonitions can also encapsulate any block content, which we’ll cover later.
+
+IMPORTANT: The term “quote” is used liberally here to apply to any symbols that surround text in order to apply emphasis or special meaning.
+
+
+* link, (extenal, with spaces and special characters, relative, Link with attributes, Inline anchors, Internal cross references)
+
+
+** Örnekler
+
+*** External:
+https://github.com/asciidoctor
+
+*** with spaces and special characters: link:https://examples.org/?q=%5Ba%20b%5D[special Character]
+
+*** relative: link:wiki[Wiki]
+
+*** Link with attributes: https://examples.org["Google, Yahoo, İnstagram",role=teal]
+ 
+*** Inline anchors: [[bookmark-b]]#satır içi ankrajlar için kullanılabilir .#
+
+
+* resim, ( Block, Inline, Inline image with positioning role, Embedded)
+
+*** Block: 
+
+image:pictures/sea.jpg[Sunset]
+       
+*** Inline: image:pictures/sea.jpg[title="Pause"] Durdurmak istersen tıkla
+
+*** Inline image with positioning role :image:pictures/sea.jpg[Gun batımı,150,150,role="right"] Denize karşı!
+
+
+* Video (Blok, Embedded Youtube video)
+
+*** Blok : 
+
+video::video/catbed.mp4[width=640, start=60, end=140, options=autoplay]
+
+
+*** Embedded Youtube video : 
+
+video::JPfuYpvMojk[youtube]
+
+
+*** C++ kaynak kod,  (Code block with title and syntax highlighting, Inline)
+
+.app.cpp Code block with title and syntax highlighting
+[source,cpp]
+----
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x;
+   cin>> x >> endl;
+   cout <<"Girilen x degeri: " << x << endl;
+}
+----
+
+*** Internal cross references:  <<bookmark-b>> nasıl yazıldığını öğrenmek için kullanılabilir.
+
+
+.app.cpp Code block with title and syntax highlighting
+[source,cpp]
+----
+#include <iostream>
+using namespace std;
+int main()
+{
+   int x; // <1>
+   cin>> x >> endl;
+   cout <<"Girilen x degeri: " << x << endl; // <2>
+}
+----
+
+<1> Degisken
+<2> Cikti
+
+.Inline
+C++ dili `OOP` bir dil.
+ 
+
+.app.bash linux bash script kod
+[source,bash]
+---
+#!/bin/bash
+echo "Hello World"
+---
+
+
+
+
+* tablo  (Table with two columns, a header, and two rows of content)
+
+
+
+[%header,cols=2*] 
+.Öğrenci Sayısı
+|===
+|1. Öğretim
+|2. Öğretim
+
+|63
+|55
+
+|56
+|59
+|===
+
+
+
+* Ayrıca bir döküman üzerindeki bir başlığa link vermeniz ( cross-ref eklemeniz: Inline anchors, Internal cross references)
+
+<<crossreference#bookmark-a,Dikkat>> daha fazla bilgi için tıklayınız

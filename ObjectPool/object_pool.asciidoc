@@ -1,0 +1,47 @@
+== Object Pool
+
+* İstenilen nesnelerin sürekli olarak üretilmesi yerine,  başlangıçta bir havuzu oluşturulur ve bu havuz nesneler ile doldurulur.
+
+
+
+== UML
+
+
+.Prototip Pattern
+[uml,file="prototip.png"]
+--
+
+left to right direction
+
+class PooledObject {
+    + String getName()
+    + String setName()
+}
+
+class ObjectPool {
+    - {static} List<PooledObject> _available
+    - List<PooledObject> _inUse
+    + int freeeItemCounter
+    - int MAXTotalObjects
+    - {static} ObjectPool<PooledObject> instance
+    - {static} Object lockObj
+    + {static} ObjectPool<PooledObject> GetInstance()
+    + PooledObject acquireReusable()
+    + void ReleaseReusable(PooledObject item)
+    + List<PooledObject> returnInuser()
+    + List<PooledObject> returnAvailable()
+    + void SetMaxPoolSize(int settingPoolSize)
+}
+
+ObjectPool o-- PooledObject
+--
+
+image:object_pool.png[Object_Pool,role="right"]
+
+
+
+
+
+
+
+

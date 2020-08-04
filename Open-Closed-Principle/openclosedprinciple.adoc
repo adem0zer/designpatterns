@@ -1,0 +1,75 @@
+== Open Closed Principle Pattern
+
+* Bu prensip sürekli olarak genişletilebilmektedir ama üstünde değişiklik yapılmaya kapalıdır. Şöyleki bizim seneryomuzda farklı veritabanlarına bağlantı yapma ve kapatma özelliği mevcuttur. Biz farklı veritabanlarını kullanabiliriz ama bunlarda bir değişiklik yapamamaktayız. Bu sayede open closed principle uymuş olmaktayız.
+
+
+.Builder Pattern Example
+[uml,file="openclosedprinciple_design.png"]
+--
+
+left to right direction
+
+interface IDatabase{
+    + void Open()
+    + void Close()
+}
+
+
+class MsSql{
+
+}
+
+class MySql{
+
+}
+
+class Oracle{
+
+}
+
+class DatabaseCreator<T>{
+    - T database
+    + DatabaseCreator(T db)
+    + void OpenDatabase()
+    + void CloseDatabase()
+}
+
+DatabaseCreator ..|> IDatabase
+Oracle ..|> IDatabase
+MySql ..|> IDatabase
+MsSql ..|> IDatabase
+
+--
+
+[source,C#]
+----
+public class DatabaseCreator<T> where T : IDatabase
+{
+    private T database <1>
+
+    public DatabaseCreator(T db)
+    {
+        database = db <2>
+    }
+
+    public void OpenDatabase()
+    {
+        database.Open() <3>
+    }
+
+    public void CloseDatabase()
+    {
+        database.Close() <4>
+    }
+}
+
+----
+<1> DatabaseCreater Tipinin yapısını bozmayan generic tip
+<2> Değişken ataması
+<3> Hangi class tarafından çağrılmışsa ona göre classın databasesi açılır. Bunu belirlemek için herhangi bir kod eklemesi yapmaya gerek yoktur.
+<4> Hangi class tarafından çağrılmışsa ona göre classın databasesi kapatılır. Bunu belirlemek için herhangi bir kod eklemesi yapmaya gerek yoktur.
+
+
+image::ocpcikti.png[]
+
+* Çıktıdan anlaşılacağı üzere istenilen veritabanı bağlantılar yapılmış ve bağlantıları kapatılmıştır.

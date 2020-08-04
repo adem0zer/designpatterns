@@ -1,0 +1,14 @@
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.exe.config
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.exe
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.pdb
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.csprojAssemblyReference.cache
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.csproj.CoreCompileInputs.cache
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.exe
+C:\Users\adem\source\repos\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.pdb
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.exe.config
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.exe
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\bin\Debug\DecoratorTasarımKalıbı.pdb
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.csprojAssemblyReference.cache
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.csproj.CoreCompileInputs.cache
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.exe
+C:\Users\adem\Desktop\YTK\Decorator\DecoratorTasarımKalıbı\DecoratorTasarımKalıbı\obj\Debug\DecoratorTasarımKalıbı.pdb

@@ -1,0 +1,61 @@
+== Prototip Pattern
+
+* İstenilen nesnelerin sürekli olarak üretilmesi yerine,  başlangıçta bir havuzu oluşturulur ve bu havuz nesneler ile doldurulur.
+
+
+** Shallow Clone
+
+Eğer bu üye elemanı değer tipinde ise değer kopyalanır. Eğer üye eleman referans tipinde ise referans kopyalanır fakat referansın gösterdiği veri kümesi kopyalanmaz.
+
+** Deep Clone
+Nesnenin bütün değer ve referans üye elemanlarını kopyalar.
+
+
+
+== UML
+
+
+.Prototip Pattern
+[uml,file="prototip.png"]
+--
+
+left to right direction
+
+class SirketHakkında {
+    + String sirtketAdi
+    + String sirketSahibi
+    + SirketHakkında()
+    + SirketHakkında(String sirtketAdi, String sirketSahibi)
+    + String getSirtketAdi()
+    + void setSirtketAdi(String sirtketAdi)
+    + String getSirketSahibi()
+    + void setSirketSahibi(String sirketSahibi)
+}
+
+
+class Sirket {
+    + int calisanSayisi
+    + SirketHakkında aciklama
+    + Sirket()
+    + Sirket(int calisanSayisi, String sirketAdi, String sirketSahibi)
+    + int getCalisanSayisi()
+    + void setCalisanSayisi(int calisanSayisi)
+    + Sirket shallowCopy()
+    + Sirket deepCopy()
+    + void print()
+}
+
+SirketHakkında <|.. Sirket
+
+--
+
+image:prototip.png[Prototip,role="right"]
+
+
+
+
+
+
+
+
+

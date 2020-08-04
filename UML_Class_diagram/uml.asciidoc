@@ -1,0 +1,250 @@
+
+== Association (Referans veya Birliktelik)
+ 
+Bağıntı ilişkisi, sınıf diyagramlarında en çok kullanılan basit ilişki türüdür. Çoğu zaman referans tutma biçimindedir. Bağıntı ilişkisi iki nesne arasına çizilen düz çizgi ile belirtilir. 
+ 
+
+.Association 
+[uml,file="association.png"]
+--
+left to right direction
+
+class Cocuk{
+ + insan: Insan
+}
+
+class Kadın{
+ + insan: Insan
+}
+
+class Insan{
+ + isim: String
+ + soyisim: String
+}
+
+Cocuk -- Kadın
+Kadın -- Insan
+--
+
+image:association.png[Association,role="right"]
+
+ 
+
+== Aggregation (Barındırma, İçerme)
+
+Birden fazla parçadan oluşan sınıflar arasındaki ilişkiye "Aggregation" denir. Aggregation ilişkisini 'bütün parça' yukarıda olacak şekilde ve 'bütün parça'nın ucuna içi boş elmas yerleştirecek şekilde gösteririz. İçi boş elmas ile gösterilen ilişkilerde herbir parça ayrı bir sınıftır ve tek başlarına anlam ifade ederler.
+
+.Aggregation 
+[uml,file="aggregation.png"]
+--
+left to right direction
+
+class Araba{
+    -hiz: float
+    -depo: float
+    +hizlan()
+}
+
+
+class Tekerlek{
+    -jantGenislik: float
+    -tekerlekTürü: String
+}
+
+class Kapı{
+    +sayi: int
+    --
+    +otomatikMi()
+}
+
+
+
+Araba o-- Tekerlek
+Araba o-- Kapı
+
+
+--
+
+image:aggregation.png[Aggregation,role="right"]
+
+
+== Composition (Bağımlı İyelik)
+
+Bütün nesne yok edildiğinde parça da yok ediliyorsa
+parça bir yere taşındığında bütün de onunla, taşınması gerekiyorsa ve parça kolaylıkla başka bir bütüne dahil edilemiyorsa bu ilişki Composition ilişkidir denir.Composition ilişki çizimde bütünü oluşturan kısmın bulunduğu tarafa içi dolu baklava şeklinde bir dikdörtgen çizilir.
+
+.Composition
+[uml,file="composition.png"]
+--
+Ev *-- Salon
+Ev *-- CocukOdası
+Ev *-- YatakOdası
+Ev *-- Banyo
+Ev *-- Koridor
+
+--
+
+image:composition.png[Composition,role="right"]
+
+
+== Generalization (Genelleme)
+
+Sınıflar arasındaki türeme ilişkisine benzer. Genel bir senaryo grubundan özel bir senaryo grubu türetilir.
+
+
+.Generalization
+[uml,file="generalization.png"]
+--
+class Hayvan{
+    -isim: String
+    -id:   int
+    -yas: int
+    -hiz: float
+    --
+    +yemek()
+    --
+    +getIsim()
+    +getYas()
+}
+
+class Kedi{
+    -gözrenk: String
+    --
+    +kos()
+    --
+    +getIsim()
+    +getGozRengi()
+}
+
+
+class At{
+    --
+    +dörtNalaKos()
+}
+
+Hayvan <|-- Kedi
+Hayvan <|-- At
+
+
+--
+
+image:generalization.png[Generalization,role="right"]
+
+
+== Realization (Gerçekleme)
+
+Kullanıcı arayüzlerinin (user interface) modellenmesinde kullanılır.Arayüz yanlızca method adlarını ve bunların parametrelerini içermektedir.Arayüzlerin kullanılması yazılımın geliştirilmesi ve bakımında önemli kolaylık sağlar. Gerçekleştirim ilişkisi kesikli bir çizginin ucuna yerleştirilen içi boş bir üçgen ile gösterilir.
+
+
+.Realization
+[uml,file="realization.png"]
+--
+left to right direction
+
+Interface Nesne
+
+Nesne <|-- Class
+--
+
+image:realization.png[Realization,role="right"]
+
+
+
+== Dependency (Bağımlılık)
+
+İki sınıftan birisi diğerini member variable olarak değil, local variable veya parametre olarak kullanıyorsa aralarında bağımlılık vardır denilir. Tüm UML ilişkileri arasında en zayıf olanıdır.
+
+
+.Dependency  örneği
+[uml,file="dependency.png"]
+--
+left to right direction
+
+VeritabanıBase ..> VeriTabanı  : <<instantiate(Örneklendirme)>>
+
+image:dependency.png[Dependency,role="right"]
+
+--
+
+
+
+== Use (Kullanma)
+
+Nesneler arası geçici ilişki kurma durumudur.
+
+.Use  örneği
+[uml,file="use.png"]
+--
+left to right direction
+
+UserController ..> UserService  : <<user>>
+--
+
+image:use.png[Use,role="right"]
+
+== Toplu olarak Birleştirme
+
+.Başlıkların toplu olarak gösterimi
+[uml,file="toplugösterim.png"]
+
+--
+
+class Cocuk{
+ + insan: Insan
+}
+
+class Kadın{
+ + insan: Insan
+}
+
+class Insan{
+ + isim: String
+ + soyisim: String
+}
+
+
+class Hayvan{
+    -isim: String
+    -id:   int
+    -yas: int
+    -hiz: float
+    --
+    +yemek()
+    --
+    +getIsim()
+    +getYas()
+}
+
+class Kedi{
+    -gözrenk: String
+    --
+    +kos()
+    --
+    +getIsim()
+    +getGozRengi()
+}
+
+
+class At{
+    --
+    +dörtNalaKos()
+}
+
+
+
+Insan <|-- Cocuk
+Insan <|-- Kadın
+
+Hayvan *-- Kedi
+Hayvan *-- At
+
+
+Canlı ..> Insan  : <<instantiate(örneklendirme)>>
+
+Canlı -- Insan
+
+abstract class Canlı
+
+Canlı <|.. Hayvan
+
+image:toplugösterim.png[toplugösterim,role="right"]

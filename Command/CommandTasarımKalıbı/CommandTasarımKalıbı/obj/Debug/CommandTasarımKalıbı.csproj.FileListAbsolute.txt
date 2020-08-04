@@ -1,0 +1,14 @@
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.csprojAssemblyReference.cache
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.csproj.CoreCompileInputs.cache
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.exe.config
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.exe
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.pdb
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.exe
+C:\Users\adem\source\repos\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.pdb
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.exe.config
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.exe
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\bin\Debug\CommandTasarımKalıbı.pdb
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.csprojAssemblyReference.cache
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.csproj.CoreCompileInputs.cache
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.exe
+C:\Users\adem\Desktop\YTK\Command\CommandTasarımKalıbı\CommandTasarımKalıbı\obj\Debug\CommandTasarımKalıbı.pdb

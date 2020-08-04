@@ -1,0 +1,19 @@
+@startuml
+
+title Classes - Class Diagram
+
+
+class Insan {
+  +Int height
+  +void walk()
+}
+
+Insan <|-- Ahmet
+Insan <|-- Ali
+Insan <|-- Ayse
+
+class Ahmet
+class Ali
+class Ayse
+
+@enduml
